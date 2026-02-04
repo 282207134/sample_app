@@ -22,7 +22,7 @@ end
 
 group :development do
   gem "web-console",         "4.2.0"
-  gem "solargraph",          "0.58.2"
+  gem "solargraph",          "0.56.2"
   gem "irb",                 "1.10.0"
   gem "repl_type_completor", "0.1.10"
 end
@@ -37,6 +37,3 @@ group :test do
   gem "guard",                    "2.18.0"
   gem "guard-minitest",           "2.4.6"
 end
-
-# Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
-# gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
