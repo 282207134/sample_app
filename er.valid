@@ -1,0 +1,7 @@
+=> 
+[32m#<User:0x00007fa879d01d70[0m
+ id: [36m[1mnil[0m,
+ name: [31m[1m"[0m[31mMichael Hartl[0m[31m[1m"[0m,
+ email: [31m[1m"[0m[31mmichael@example.com[0m[31m[1m"[0m,
+ created_at: [36m[1mnil[0m,
+ updated_at: [36m[1mnil[0m[32m>[0m
