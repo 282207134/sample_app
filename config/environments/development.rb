@@ -67,14 +67,13 @@ Rails.application.configure do
     'X-Frame-Options' => "ALLOW-FROM #{pf_domain}"
   }
 
-  # Raises error for missing translations.
-  # config.i18n.raise_on_missing_translations = true
+  config.action_mailer.raise_delivery_errors = false
 
-  # Annotate rendered view with file names.
-  # config.action_view.annotate_rendered_view_with_filenames = true
-
-  # Uncomment if you wish to allow Action Cable access from any origin.
-  # config.action_cable.disable_request_forgery_protection = true
+  host = 'example.com' # ここをコピペすると失敗します。自分の環境のホストに変えてください。
+  # クラウドIDEの場合は以下をお使いください
+  #config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  # localhostで開発している場合は以下をお使いください
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   # Allow requests from our preview domain.
   pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
