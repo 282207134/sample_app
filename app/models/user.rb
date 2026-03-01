@@ -65,7 +65,9 @@ class User < ApplicationRecord
   end
 
   # 有効化用のメールを送信する（after_create から呼ばれる）
+  # 既に activated なユーザー（例: seed）では送信しない
   def send_activation_email
+    return if activated?
     UserMailer.account_activation(self).deliver_now
   end
 end
