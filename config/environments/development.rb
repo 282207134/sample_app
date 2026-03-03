@@ -69,7 +69,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = false
 
-  host = 'example.com' # ここをコピペすると失敗します。自分の環境のホストに変えてください。
+  host = 'localhost:3000' # 本地开发用；クラウドIDEの場合は適宜変更
   # クラウドIDEの場合は以下をお使いください
   #config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # localhostで開発している場合は以下をお使いください
