@@ -51,6 +51,11 @@ class User < ApplicationRecord
     update_attribute(:activated_at, Time.zone.now)
   end
 
+  # パスワード再設定の期限が切れている場合はtrueを返す（PasswordResetsController から呼ぶため public）
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
   private
 
   # メールアドレスをすべて小文字にする
