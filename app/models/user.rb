@@ -69,6 +69,12 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  # 試作feedの定義
+  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   private
 
   # メールアドレスをすべて小文字にする
@@ -88,4 +94,5 @@ class User < ApplicationRecord
     return if activated?
     UserMailer.account_activation(self).deliver_now
   end
+
 end
