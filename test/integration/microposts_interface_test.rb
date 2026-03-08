@@ -12,7 +12,7 @@ class MicropostsInterfaceTest < MicropostsInterface
     assert_select 'div.pagination'  
   end  
 
-  wtest "should show errors but not create micropost on invalid submission" do    
+  test "should show errors but not create micropost on invalid submission" do    
       assert_no_difference 'Micropost.count' do      
         post microposts_path, params: { micropost: { content: "" } }    
       end    
