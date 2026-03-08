@@ -85,6 +85,7 @@ class User < ApplicationRecord
                     WHERE  follower_id = #{id}"    
     Micropost.where("user_id IN (#{following_ids})                     
                     OR user_id = :user_id", user_id: id)
+                    .includes(:user, image_attachment: :blob)
   end
 
   # ユーザーをフォローする
